@@ -176,7 +176,7 @@ window.onload=()=>{
 
 setTimeout(()=>{
 
-alert("💖 Happy Birthday Melina! Ich wünsche dir einen wunderschönen 18. Geburtstag! 🎂💕");
+alert("💖 Happy Birthday Melina! Ich wünsche dir einen wunderschönen 19. Geburtstag! 🎂💕");
 
 },800);
 
