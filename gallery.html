@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Unsere Erinnerungen ❤️</title>
+
+<style>
+
+body{
+margin:0;
+background:linear-gradient(#ffd6ec,#fff0f8);
+font-family:Arial;
+text-align:center;
+overflow-x:hidden;
+}
+
+h1{
+color:#ff4da6;
+font-size:55px;
+margin:40px;
+}
+
+.gallery{
+
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+gap:25px;
+padding:40px;
+
+}
+
+.gallery img{
+
+width:100%;
+border-radius:25px;
+cursor:pointer;
+transition:.4s;
+box-shadow:0 10px 25px rgba(0,0,0,.2);
+
+}
+
+.gallery img:hover{
+
+transform:scale(1.08) rotate(2deg);
+
+}
+
+.lightbox{
+
+display:none;
+position:fixed;
+top:0;
+left:0;
+width:100%;
+height:100%;
+background:rgba(0,0,0,.85);
+justify-content:center;
+align-items:center;
+
+}
+
+.lightbox img{
+
+max-width:90%;
+max-height:90%;
+border-radius:20px;
+
+}
+
+button{
+
+margin:40px;
+padding:18px 40px;
+border:none;
+border-radius:20px;
+background:#ff5ba8;
+color:white;
+font-size:20px;
+cursor:pointer;
+
+}
+
+.heart{
+
+position:fixed;
+top:-50px;
+font-size:25px;
+animation:fall linear infinite;
+
+}
+
+@keyframes fall{
+
+0%{
+
+transform:translateY(-50px);
+
+opacity:0;
+
+}
+
+20%{
+
+opacity:1;
+
+}
+
+100%{
+
+transform:translateY(110vh) rotate(360deg);
+
+opacity:0;
+
+}
+
+}
+
+</style>
+
+</head>
+
+<body>
+
+<h1>📸 Unsere schönsten Momente ❤️</h1>
+
+<div class="gallery">
+
+<img src="bilder/1.jpg" onclick="openImg(this.src)">
+<img src="bilder/2.jpg" onclick="openImg(this.src)">
+<img src="bilder/3.jpg" onclick="openImg(this.src)">
+<img src="bilder/4.jpg" onclick="openImg(this.src)">
+<img src="bilder/5.jpg" onclick="openImg(this.src)">
+<img src="bilder/6.jpg" onclick="openImg(this.src)">
+<img src="bilder/7.jpg" onclick="openImg(this.src)">
+<img src="bilder/8.jpg" onclick="openImg(this.src)">
+
+</div>
+
+<button onclick="location.href='birthday.html'">
+❤️ Zurück
+</button>
+
+<div class="lightbox" id="lightbox" onclick="closeImg()">
+
+<img id="big">
+
+</div>
+
+<script>
+
+function openImg(src){
+
+document.getElementById("lightbox").style.display="flex";
+
+document.getElementById("big").src=src;
+
+}
+
+function closeImg(){
+
+document.getElementById("lightbox").style.display="none";
+
+}
+
+setInterval(()=>{
+
+let heart=document.createElement("div");
+
+heart.className="heart";
+
+heart.innerHTML="💖";
+
+heart.style.left=Math.random()*100+"vw";
+
+heart.style.animationDuration=(5+Math.random()*5)+"s";
+
+document.body.appendChild(heart);
+
+setTimeout(()=>{
+
+heart.remove();
+
+},10000);
+
+},200);
+
+</script>
+
+</body>
+</html>

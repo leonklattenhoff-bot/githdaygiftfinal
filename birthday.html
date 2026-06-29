@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Happy Birthday ❤️</title>
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:Arial,sans-serif;
+}
+
+body{
+overflow-x:hidden;
+background:linear-gradient(180deg,#ffd6ec,#ffe7f5,#fff4fb);
+text-align:center;
+color:#ff3f98;
+}
+
+/* Hintergrund-Herzen */
+
+.heart{
+position:fixed;
+top:-50px;
+font-size:25px;
+animation:fall linear infinite;
+pointer-events:none;
+}
+
+@keyframes fall{
+
+0%{
+transform:translateY(-50px) rotate(0deg);
+opacity:0;
+}
+
+20%{
+opacity:1;
+}
+
+100%{
+transform:translateY(110vh) rotate(360deg);
+opacity:0;
+}
+
+}
+
+header{
+
+padding:80px 20px;
+
+}
+
+h1{
+
+font-size:60px;
+animation:pulse 2s infinite;
+
+}
+
+@keyframes pulse{
+
+50%{
+transform:scale(1.08);
+}
+
+}
+
+.subtitle{
+
+font-size:24px;
+margin-top:20px;
+
+}
+
+.card{
+
+background:white;
+width:90%;
+max-width:700px;
+margin:40px auto;
+padding:35px;
+border-radius:25px;
+box-shadow:0 0 25px rgba(255,105,180,.3);
+
+}
+
+.card h2{
+
+margin-bottom:20px;
+
+}
+
+.card p{
+
+font-size:20px;
+line-height:1.8;
+
+}
+
+button{
+
+margin-top:30px;
+padding:18px 35px;
+font-size:18px;
+border:none;
+border-radius:15px;
+background:#ff5ca8;
+color:white;
+cursor:pointer;
+transition:.3s;
+
+}
+
+button:hover{
+
+transform:scale(1.05);
+
+}
+
+#message{
+
+display:none;
+margin-top:30px;
+font-size:24px;
+
+}
+
+footer{
+
+padding:50px;
+font-size:20px;
+
+}
+
+</style>
+
+</head>
+
+<body>
+
+<header>
+
+<h1>🎂 Happy Birthday Melina 🎂</h1>
+
+<p class="subtitle">
+Heute dreht sich alles nur um dich. 💖
+</p>
+
+</header>
+
+<div class="card">
+
+<h2>💌 Für dich</h2>
+
+<p>
+
+Liebe Melina,
+
+ich wünsche dir von Herzen alles Gute zum 19. Geburtstag. ❤️
+
+Dankee für all die schönen Erinnerungen, die wir schon gemeinsam erleben durften.
+
+Du bringst mich jeden Tag zum Lächeln und ich hoffe, dass wir noch ganz viele Dinge zussammen erkben werden.  
+
+Bleib genauso wundervoll wie du bist.
+
+Ich hab dich unglaublich lieb. 💕
+
+</p>
+
+<button onclick="showMessage()">
+
+🎁 Überraschung öffnen
+
+</button>
+
+<div id="message">
+
+✨ Du bist mein Lieblingsmensch. ❤️✨
+
+</div>
+
+</div>
+
+<footer>
+
+💖 Ich hoffe dein Geburtstag wird genauso wunderschön wie du. 💖
+
+</footer>
+
+<script>
+
+function showMessage(){
+
+document.getElementById("message").style.display="block";
+
+alert("🎉 Alles Gute zum Geburtstag Melina! ❤️");
+
+}
+
+setInterval(()=>{
+
+let heart=document.createElement("div");
+
+heart.className="heart";
+
+heart.innerHTML=Math.random()>0.5?"💖":"💕";
+
+heart.style.left=Math.random()*100+"vw";
+
+heart.style.fontSize=(20+Math.random()*30)+"px";
+
+heart.style.animationDuration=(5+Math.random()*5)+"s";
+
+document.body.appendChild(heart);
+
+setTimeout(()=>{
+
+heart.remove();
+
+},10000);
+
+},180);
+
+</script>
+<script src="script.js"></script>
+</body>
+</html>
